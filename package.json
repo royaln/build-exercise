@@ -2,18 +2,23 @@
   "name": "frontend-engineer-exercise",
   "version": "0.1.0",
   "private": true,
+  "description": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
     "vue": "^2.5.22"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-babel": "^4.5.9",
     "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.9",
     "@vue/cli-service": "^3.4.0",
+    "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -31,7 +36,18 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
   },
   "postcss": {
     "plugins": {
@@ -43,6 +59,5 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "keywords": [],
-  "description": ""
+  "keywords": []
 }
